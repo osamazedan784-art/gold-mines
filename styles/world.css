@@ -1,0 +1,65 @@
+/* ===== عالم اللعبة ===== */
+#world {
+  position: relative;
+  width: 100%;
+}
+
+#sky {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  background: linear-gradient(#74c8f6, #b9e6fb 42%, #fff1d6 78%, #ffe3ba);
+}
+
+#shaft {
+  position: absolute;
+  left: 0;
+  top: 190px;
+  width: 64px;
+  height: 200px;
+  background: linear-gradient(90deg, #070a10, #161e2c 50%, #070a10);
+  border-left: 4px solid #3a2a1b;
+  border-right: 4px solid #3a2a1b;
+}
+
+#cab {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 40px;
+  height: 50px;
+  background: #d9801f;
+  border: 3px solid #8a4a0b;
+  border-radius: 6px;
+  z-index: 6;
+  transition: transform 0.4s;
+}
+
+#rows {
+  position: relative;
+  margin-left: 64px;
+}
+
+.row {
+  height: 70px;
+  background: linear-gradient(#7a4a29, #6a3f22);
+  border-bottom: 3px solid #4a2b16;
+  position: relative;
+  padding: 8px;
+}
+
+.row-info {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  text-shadow: 0 1px 2px #000;
+}
+
+#nextMine {
+  display: block;
+  margin: 12px;
+  width: calc(100% - 24px);
+  padding: 14px;
+  font-size: 14px;
+  border-radius: 14px;
+}
