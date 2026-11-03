@@ -1,0 +1,29 @@
+/* ===== الشريط العلوي ===== */
+#hud {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: linear-gradient(#1d2d49, #101b2d);
+  border-bottom: 2px solid #2d3f5f;
+  box-shadow: 0 6px 16px #0007;
+}
+
+#cash {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+#inc {
+  font-size: 12px;
+  color: var(--muted);
+  background: #0008;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-variant-numeric: tabular-nums;
+}
