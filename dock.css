@@ -1,0 +1,31 @@
+/* ===== الشريط السفلي ===== */
+#dock {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(#142138f2, #0d1626);
+  border-top: 2px solid #324666;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -8px 22px #000a;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  direction: rtl;
+}
+
+#boostBtn {
+  background: linear-gradient(#72eaa0, #2fb862 55%, #1f9a4d);
+  box-shadow: 0 3px 0 #1a6c3a;
+  color: #fff;
+  font-size: 13px;
+  padding: 10px;
+}
+
+#boostBtn:disabled {
+  background: linear-gradient(#7a8398, #5f6a80);
+}
