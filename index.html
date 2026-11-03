@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مناجم الذهب</title>
+<meta name="theme-color" content="#0b1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;800&display=swap">
+
+<style>
+:root{--gold:#ffcf40;--muted:#9fb3cf;--bg:#0b1220}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;min-height:100%;background:var(--bg);color:#fff;font-family:'Tajawal',system-ui,sans-serif;direction:rtl;overflow-x:hidden}
+#app{width:100%;max-width:480px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:90px}
+#app[hidden]{display:none}
+.btn{border:0;border-radius:12px;font-family:inherit;font-weight:800;font-size:14px;color:#2a1a00;padding:10px 16px;background:linear-gradient(#ffe27a,#f0b020 55%,#d9920f);box-shadow:0 3px 0 #8a5a00;cursor:pointer}
+.btn:disabled{background:linear-gradient(#7a8398,#5f6a80);color:#d3dae8;box-shadow:0 3px 0 #3d4452}
+#splash{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle at 50% 30%,#1a2a4a,#070b14);display:flex;align-items:center;justify-content:center;transition:opacity .7s}
+#splash.out{opacity:0;pointer-events:none}
+.splash-inner{text-align:center;padding:20px}
+#splash h1{font-size:32px;color:var(--gold);text-shadow:0 3px 0 #3a2200;margin:0 0 24px}
+#splash p{font-size:14px;color:var(--muted)}
+#hud{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:linear-gradient(#1d2d49,#101b2d);border-bottom:2px solid #2d3f5f}
+#cash{font-size:22px;font-weight:800;color:var(--gold)}
+#inc{font-size:12px;color:var(--muted);background:#0008;padding:3px 10px;border-radius:20px}
+#sky{position:relative;height:190px;background:linear-gradient(#74c8f6,#b9e6fb 42%,#fff1d6 78%,#ffe3ba)}
+#shaft{position:absolute;left:0;top:190px;width:64px;height:200px;background:linear-gradient(90deg,#070a10,#161e2c 50%,#070a10);border-left:4px solid #3a2a1b;border-right:4px solid #3a2a1b}
+#cab{position:absolute;left:12px;top:0;width:40px;height:50px;background:#d9801f;border:3px solid #8a4a0b;border-radius:6px;z-index:6;transition:transform .4s}
+#rows{margin-left:64px}
+.row{height:70px;background:linear-gradient(#7a4a29,#6a3f22);border-bottom:3px solid #4a2b16;padding:8px}
+.row-info{color:#fff;font-size:11px;font-weight:800;text-shadow:0 1px 2px #000}
+#nextMine{display:block;margin:12px;width:calc(100% - 24px);padding:14px;font-size:14px;border-radius:14px}
+#dock{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(#142138f2,#0d1626);border-top:2px solid #324666;border-radius:18px 18px 0 0;z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:8px;direction:rtl}
+#boostBtn{background:linear-gradient(#72eaa0,#2fb862 55%,#1f9a4d);color:#fff;font-size:13px;padding:10px}
+#boostBtn:disabled{background:linear-gradient(#7a8398,#5f6a80)}
+#toast{position:fixed;top:70px;left:50%;transform:translate(-50%,-20px);background:linear-gradient(#1b2a44ee,#0e1726ee);border:1px solid #ffcf4099;color:var(--gold);padding:10px 18px;border-radius:14px;font-size:13px;font-weight:800;opacity:0;transition:.4s;z-index:60;pointer-events:none;text-align:center;max-width:90vw}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<div id="splash">
+  <div class="splash-inner">
+    <h1>⛏️ مناجم الذهب</h1>
+    <p>جارٍ التحميل…</p>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header id="hud">
+    <div id="cash">🪙 0</div>
+    <div id="inc">+0 / ثانية</div>
+  </header>
+
+  <div id="sky"></div>
+  <div id="shaft"></div>
+  <div id="cab"></div>
+  <div id="rows"></div>
+  <button id="nextMine" class="btn">فتح منجم جديد</button>
+
+  <nav id="dock">
+    <button id="modeBtn" class="btn">×1</button>
+    <button id="boostBtn" class="btn">⚡ تسريع</button>
+  </nav>
+
+  <div id="toast" role="status"></div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
